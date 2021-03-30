@@ -1,6 +1,7 @@
 USE codeup_test_db;
 
 -- The name of all albums by Pink Floyd.
+select 'Pink Floyd' as 'All albums by';
 select * from albums where artist = 'Pink Floyd';
 
 -- The year Sgt. Pepper's Lonely Hearts Club Band was released
