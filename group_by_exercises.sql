@@ -30,7 +30,7 @@ WHERE last_name LIKE ('%q%')
 GROUP BY last_name;
 
 
-SELECT DISTINCT last_name, COUNT(last_name)
+SELECT DISTINCT COUNT(last_name), last_name
 FROM employees
 WHERE last_name LIKE ('%q%')
   AND (
@@ -39,7 +39,7 @@ WHERE last_name LIKE ('%q%')
 GROUP BY last_name;
 
 
-SELECT DISTINCT gender, COUNT(gender)
+SELECT DISTINCT COUNT(gender), gender
 FROM employees
 WHERE first_name IN ('Irena', 'Vidya', 'Maya')
 GROUP BY gender;
