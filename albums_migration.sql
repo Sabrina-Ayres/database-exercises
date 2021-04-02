@@ -11,5 +11,6 @@ CREATE TABLE albums
     genre        VARCHAR(100),
     sales        FLOAT(6, 2),
     PRIMARY KEY (id)
+    UNIQUE (artist, name)
 );
 
