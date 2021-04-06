@@ -103,7 +103,27 @@ CREATE TABLE quote_topic
 );
 
 INSERT INTO quote_topic(quote_id, topic_id)
-VALUES (1, 7), (1, 3), (2, 2), (3, 2), (4, 5), (4, 6), (5, 2), (5, 7), (6, 2), (6, 7);
+VALUES (1, 7),
+       (1, 3),
+       (2, 2),
+       (3, 2),
+       (4, 5),
+       (4, 6),
+       (5, 2),
+       (5, 7),
+       (6, 2),
+       (6, 7);
 
 SELECT *
 FROM quote_topic;
+
+SELECT CONCAT(a.first_name, ' ', a.last_name), q.content, t.name
+FROM quotes q
+         INNER JOIN quote_topic qt on q.id = qt.quote_id
+         INNER JOIN topics t on qt.topic_id = t.id
+         INNER JOIN authors a on q.author_id = a.id
+WHERE qt.topic_id IN (
+    SELECT t.id
+    FROM topics t
+    WHERE t.name = 'Life'
+);
